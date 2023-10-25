@@ -37,7 +37,7 @@ export const columns: ColumnDef<Customer>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Customer ID" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="w-[60px]">{row.getValue("id")}</div>,
     enableSorting: true,
     enableHiding: true,
   },
@@ -46,7 +46,7 @@ export const columns: ColumnDef<Customer>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Customer Name" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("name")}</div>,
+    cell: ({ row }) => <div className="w-[100px]">{row.getValue("name")}</div>,
     enableSorting: true,
     enableHiding: true,
   },
@@ -64,7 +64,7 @@ export const columns: ColumnDef<Customer>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Phone Number" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("phone")}</div>,
+    cell: ({ row }) => <div className="w-[60px]">{row.getValue("phone")}</div>,
     enableSorting: true,
     enableHiding: true,
   },
@@ -73,7 +73,7 @@ export const columns: ColumnDef<Customer>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Address" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("address")}</div>,
+    cell: ({ row }) => <div className="w-[200px]">{row.getValue("address")}</div>,
     enableSorting: true,
     enableHiding: true,
   },
