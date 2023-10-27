@@ -347,7 +347,9 @@ html {
 .form_input {
   @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
 }
-
+.search_input{
+  @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
+}
 
 .logo_text {
   @apply max-sm:hidden  font-semibold text-lg text-black tracking-wide;

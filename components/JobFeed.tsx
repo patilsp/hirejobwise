@@ -1,11 +1,27 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import JobCard from "./JobCard"; 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+
+import JobCard from "./JobCard";
+
+const JobCardList = ({ data, handleTagClick }) => {
+  return (
+    <div className='prompt_layout mt-16'>
+      {data.map((job) => (
+        <JobCard
+          key={job._id}
+          job={job}
+          handleTagClick={handleTagClick}
+        />
+      ))}
+    </div>
+  );
+};
 
 const JobFeed = () => {
-  const [allPosts, setAllPosts] = useState([]);
+  const [allJobs, setAllJobs] = useState([]);
+
+  // Search states
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
@@ -14,7 +30,7 @@ const JobFeed = () => {
     const response = await fetch("/api/job");
     const data = await response.json();
 
-    setAllPosts(data);
+    setAllJobs(data);
   };
 
   useEffect(() => {
@@ -22,12 +38,12 @@ const JobFeed = () => {
   }, []);
 
   const filterPrompts = (searchtext) => {
-    const regex = new RegExp(searchtext, "i");
-    return allPosts.filter(
+    const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
+    return allJobs.filter(
       (item) =>
         regex.test(item.creator.username) ||
-        regex.test(item.tag) ||
-        regex.test(item.prompt)
+        regex.test(item.job_title) ||
+        regex.test(item.tag)
     );
   };
 
@@ -35,6 +51,7 @@ const JobFeed = () => {
     clearTimeout(searchTimeout);
     setSearchText(e.target.value);
 
+    // debounce method
     setSearchTimeout(
       setTimeout(() => {
         const searchResult = filterPrompts(e.target.value);
@@ -44,34 +61,33 @@ const JobFeed = () => {
   };
 
   const handleTagClick = (tagName) => {
-    if (searchText === tagName) {
-      // If the same tag is clicked again, clear the search
-      setSearchText("");
-      setSearchedResults([]);
-    } else {
-      setSearchText(tagName);
-      const searchResult = filterPrompts(tagName);
-      setSearchedResults(searchResult);
-    }
+    setSearchText(tagName);
+
+    const searchResult = filterPrompts(tagName);
+    setSearchedResults(searchResult);
   };
 
   return (
-    <section className="feed">
-      <form className="flex-center relative w-full">
+    <section className='feed'>
+      <form className='flex-center relative w-full'>
         <input
-          type="text"
-          placeholder="Search for a tag or a username"
+          type='text'
+          placeholder='Search for a tag or a username'
           value={searchText}
           onChange={handleSearchChange}
           required
-          className="search_input peer"
+          className='search_input peer'
         />
       </form>
 
+      {/* All Prompts */}
       {searchText ? (
-        <JobCard data={searchedResults} handleTagClick={handleTagClick} />
+        <JobCardList
+          data={searchedResults}
+          handleTagClick={handleTagClick}
+        />
       ) : (
-        <JobCard data={allPosts} handleTagClick={handleTagClick} />
+        <JobCardList data={allJobs} handleTagClick={handleTagClick} />
       )}
     </section>
   );

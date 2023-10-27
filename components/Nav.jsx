@@ -41,7 +41,7 @@ const Nav = () => {
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <div className="bg1 absolute right-0 z-10 w-64 origin-top-right rounded-md shadow-lg">
+                
                   <DropdownMenuLabel className="font-normal">
                     <div className="ml-1 flex gap-1 space-y-1 p-1">
                       <Image
@@ -121,7 +121,7 @@ const Nav = () => {
                       Sign Out
                     </button>
                   </div>
-                </div>
+                
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
