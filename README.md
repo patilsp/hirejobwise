@@ -1,5 +1,6 @@
 # next-template
-![image](https://github.com/patilsp/excellent-service-application/assets/35653819/ebfd0cff-7384-4f5b-a9e2-43a4c2e9d943)
+![image](https://github.com/patilsp/hirejobwise/assets/35653819/cab5ac4c-f793-4a3c-ac3d-1be46b9f8b54)
+
 
 A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
 
