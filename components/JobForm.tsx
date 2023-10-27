@@ -26,9 +26,9 @@ import { Textarea } from "@/registry/new-york/ui/textarea"
 
 const JobForm = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
-    <section className='flex-center  mb-5 mt-4 w-full max-w-full flex-col'>
+    <section className='flex w-full max-w-full flex-col items-center justify-center p-10'>
       <h1 className='head_text text-center'>
-        <span className='fs-36 green_gradient'>{type} Job</span>
+        <span className='fs-36 gradient_blue'>{type} Job</span>
       </h1>
       <p className='desc max-w-md text-center'>
         {type} and share all the details of the job with the world, and let your
@@ -97,6 +97,25 @@ const JobForm = ({ type, post, setPost, submitting, handleSubmit }) => {
         </div>
 
         <div className="grid gap-2">
+            <Label htmlFor="status">Job Type</Label>
+            <Select>
+              <SelectTrigger
+               value={post.job_type}
+               onChange={(e) => setPost({ ...post, job_type: e.target.value })}
+               className="line-clamp-1 w-[160px] truncate"
+              >
+                <SelectValue placeholder="Select Job Type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="full_time">Full Time</SelectItem>
+                <SelectItem value="part_time">Part Time</SelectItem>
+                <SelectItem value="workfromhome">Work From Home</SelectItem>
+              </SelectContent>
+            </Select>
+         
+        </div>
+
+        <div className="grid gap-2">
             <Label htmlFor="status">Status</Label>
             <Select>
               <SelectTrigger
@@ -113,9 +132,10 @@ const JobForm = ({ type, post, setPost, submitting, handleSubmit }) => {
             </Select>
           </div>
         </div>
+      
 
-        <div className='flex-end mx-3 mb-5 mt-3 gap-4'>
-          <Link href='/customers' className='text-sm text-gray-500'>
+        <div className='mx-3 mb-5 mt-3 flex justify-end gap-4'>
+          <Link href='/customers' className='mr-2 mt-2 text-sm text-gray-500'>
             Cancel
           </Link>
 

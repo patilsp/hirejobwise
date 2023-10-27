@@ -9,21 +9,20 @@ import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { Badge } from "@/registry/new-york/ui/badge"
 
+import Lottie from "lottie-react";
+import animationData from "../assets/logo.json";
+
 export function MainNav() {
   const pathname = usePathname()
 
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <Image 
-            src="/images/logo1.png"
-            alt="logo"
-            className="object-contain"
-            height="50"
-            width="50"
-          />
+        <div style={{ width: '50px', height: '50px' }}>
+          <Lottie animationData={animationData} />
+        </div>
       </Link>
-      <nav className="flex items-center space-x-6 text-sm font-medium">
+      <nav className="nav-link flex items-center space-x-6 text-sm font-medium">
         <Link
           href="/"
           className={cn(
@@ -31,9 +30,9 @@ export function MainNav() {
             pathname === "/docs" ? "text-foreground" : "text-foreground/60"
           )}
         >
-          Home
+          Find Job
         </Link>
-        <Link
+        {/* <Link
           href="/dashboard"
           className={cn(
             "transition-colors hover:text-foreground/80",
@@ -41,33 +40,33 @@ export function MainNav() {
           )}
         >
           Dashboard
-        </Link>
+        </Link> */}
         <Link
-          href="/customers"
+          href="/applications"
           className={cn(
             "transition-colors hover:text-foreground/80",
             pathname === "/dashboard" ? "text-foreground" : "text-foreground/60"
           )}
         >
-          Customers
+          Applications
         </Link>
         <Link
-          href="/products"
+          href="/companies"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname === "/dashboard" ? "text-foreground" : "text-foreground/60"
+            pathname === "/companies" ? "text-foreground" : "text-foreground/60"
           )}
         >
-          Products
+          Companies
         </Link>
         <Link
-          href="/tasks"
+          href="/messages"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname === "/tasks" ? "text-foreground" : "text-foreground/60"
+            pathname === "/messages" ? "text-foreground" : "text-foreground/60"
           )}
         >
-          Tasks
+          Messages
         </Link>
         <Link
           href="/forms"

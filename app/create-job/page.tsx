@@ -26,16 +26,16 @@ import {
 import { Textarea } from "@/registry/new-york/ui/textarea"
 
 
-const CreateCustomer = () => {
+const CreateJob = () => {
   
   const router = useRouter();
   const { isLoaded, userId, getToken } = useAuth();
   const { isSignedIn, user } = useUser();
 
   const [submitting, setIsSubmitting] = useState(false);
-  const [post, setPost] = useState({ name: "", email: "", address:"", phone: "", status:"", dateofbirth:"" });
+  const [post, setPost] = useState({ userId:"", company_name:"", job_title: "", description:"", salary: "", status:"", createddate:"", job_type:"" });
 
-  const createCustomer = async (e) => {
+  const createJob= async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -43,17 +43,20 @@ const CreateCustomer = () => {
       const response = await fetch("/api/job/new", {
         method: "POST",
         body: JSON.stringify({
-          name: post.name,
-          email: post.email,
-          address: post.address,
-          phone: post.phone,
-          status: post.status,
-          dateofbirth:post.dateofbirth,
+          userId:userId,
+          company_name: post.company_name,
+          job_title: post.job_title,
+          description: post.description,
+          salary: post.salary,
+          status:post.status,
+          createddate: post.createddate,      
+          job_type:post.job_type,
+          
         }),
       });
 
       if (response.ok) {
-        router.push("/jobs");
+        router.push("/");
         toast.success("Job has been created! 🔥");
       }
       
@@ -70,9 +73,9 @@ const CreateCustomer = () => {
       post={post}
       setPost={setPost}
       submitting={submitting}
-      handleSubmit={createCustomer}
+      handleSubmit={createJob}
     />
   );
 };
 
-export default CreateCustomer;
+export default CreateJob;
