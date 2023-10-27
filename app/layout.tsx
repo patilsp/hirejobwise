@@ -6,8 +6,6 @@ import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeProvider } from "@/components/theme-provider"
 import SessionProvider from "@/components/Provider";
 
 export const metadata: Metadata = {
@@ -34,24 +32,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html lang="en" suppressHydrationWarning>
         
       <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
-          )}
-        >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+        className={`overflow-x-hidden overflow-y-scroll bg-[#030014] color: #fff`}
+      >
+        
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
                 <div className="flex-1 py-10">{children}</div>
               <SiteFooter />
             </div>
-            <TailwindIndicator />
-          </ThemeProvider>
+           
         </body>
       </html>
       </SessionProvider>

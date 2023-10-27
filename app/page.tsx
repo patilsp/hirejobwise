@@ -1,22 +1,19 @@
-"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { siteConfig } from '@/config/site';
-import { buttonVariants } from '@/components/ui/button';
-import { motion } from 'framer-motion';
+import Hero from "@/components/main/Hero";
+import Projects from "@/components/main/Projects";
 import Welcome from "@/components/welcome";
-import JobFeeds from "@/components/JobFeed";
 
-const IndexPage = () => {
+import Image from "next/image";
 
+export default function Home() {
   return (
-    <section className="items-center">
-     {/* <JobFeeds /> */}
-     <Welcome />
-    </section>
-  );
-};
+    <main className="h-full w-full">
+      <div className="flex flex-col gap-20">
+        <Hero />
+        <Welcome />
 
-export default IndexPage;
+        {/* <Projects /> */}
+      </div>
+    </main>
+  );
+}

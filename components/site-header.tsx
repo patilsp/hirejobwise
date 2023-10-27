@@ -14,9 +14,8 @@ import Nav from "@/components/nav"
 
 export function SiteHeader() {
   return (
-    <header className="supports-backdrop-blur:bg-background/60 header sticky top-0 z-50 w-full backdrop-blur">
-      <div className="container flex h-14 items-center">
-
+    <header className="supports-backdrop-blur:bg-background/60 bg1 header sticky top-0 z-50 w-full py-2 backdrop-blur">
+      <div className="container flex h-14 items-center ">
         <MainNav />
         <MobileNav />
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">

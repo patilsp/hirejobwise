@@ -12,63 +12,11 @@ import animationData from "@/assets/animation3.json";
 export default function Welcome() {
   return (
     <>
-      
-      <div className="relative my-10 h-full  flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-
-        <div className="relative  p-2">
-        <motion.div
-            initial={{ opacity: 0, x: -100 }} 
-            animate={{ opacity: 1, x: 0 }}     
-            transition={{ duration: 1, delay: 1 }}  
+  
+          <section 
+            className="relative flex h-full flex-col items-center justify-center gap-3 overflow-hidden"
+            style={{ transform: "scale(0.9" }}
           >
-          <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[455px]">
-            <div className="flex flex-col space-y-2 text-center">
-              <div className="text-center">
-                  <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Lets Find Your <br /> <p className="gradient_blue">Dream Job Here</p></h1>
-                  <p className="mt-6 text-lg leading-8 text-gray-200">Join the best tech startups in the industry</p>
-                 
-                  <p className="text-sm text-muted-foreground">
-                    The easiest way to get your dream job, create trackable 
-                    resumes and enrich your application employer will find you.
-                  </p>
-                  <div className="mt-10 flex items-center justify-center gap-x-6">
-                  <a href="/sign-in" className="button button-primary">Get started</a>
-                  <a href="#" className="text-sm font-semibold leading-6 text-gray-100">Learn more <span aria-hidden="true">→</span></a>
-                  </div>
-              </div>
-        
-            </div>
-           
-            <p className="px-8 text-center text-sm text-muted-foreground">
-              We Are Trusted By 
-            </p>
-          </div>
-          </motion.div>
-        </div>
-
-        <div className="relative mt-4 flex-col text-white lg:flex">
-          <div className="absolute inset-0 " />
-        
-            <motion.div
-            initial={{ opacity: 0, y: 50 }} 
-            animate={{ opacity: 1, y: 0 }}    
-            transition={{ duration: 1, delay: 1 }} 
-          >
-          <div className="text-card-foreground">
-            <div className="flex justify-center"> 
-              <Lottie animationData={animationData} />                     
-            </div>            
-          </div>   
-          </motion.div>     
-        </div>
-
-        </div>
-
-
-
-        <section
-          className="container space-y-6  bg-transparent py-8 md:py-12 lg:py-24"
-        >
           
           <div className=" item-center flex max-w-full justify-center">
             <div className="relative isolate">
@@ -147,7 +95,7 @@ export default function Welcome() {
 
 
         <section
-        className="container space-y-6  bg-transparent py-8 md:py-12 lg:py-24"
+        className="container  space-y-6 py-8 md:py-12 lg:py-24"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl">
