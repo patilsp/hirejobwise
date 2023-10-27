@@ -24,6 +24,7 @@
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
     --ring: 263.4 70% 50.4%;
+    --radius: 5px;
   }
  
   .dark {
@@ -46,6 +47,7 @@
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
     --ring: 263.4 70% 50.4%;
+    --radius: 5px;
   }
 }
 ::-webkit-scrollbar-thumb {
@@ -62,6 +64,10 @@
 
   .bg-background{
     background-color: #030014 !important;
+  }
+  .bg1{
+    --tw-bg-opacity: 1;
+    background-color: rgb(9 9 11/var(--tw-bg-opacity));
   }
 
   /* .cl-card{
@@ -95,31 +101,6 @@
 }
   
 
-.button {
-  color: var(--color-button-primary-text);
-  background: var(--color-button-primary);
-  box-shadow: 0 0.3259259164px 0.7333333492px 0 rgba(0,0,0,.12), 0 1.5407407284px 2.8666665554px 0 rgba(0,0,0,.07), 0 4px 9px 0 rgba(0,0,0,.05);
-  min-height: 36px;
-  padding: 0.25rem 0.875rem;
-  font-size: var(--typography-sans-200-regular-font-size);
-  line-height: var(--typography-sans-200-regular-line-height);
-  letter-spacing: var(--typography-sans-200-regular-letter-spacing);
-  font-weight: 570;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  word-break: break-word;
-  white-space: pre-line;
-  border-radius: var(--border-radius-300);
-  font-family: var(--font-family-sans);
-  font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  border: 0;
-  height: auto;
-  background: transparent;
-  text-decoration: none;
-  min-width: var(--button-min-width);
-}
 
 .header {
   -webkit-backdrop-filter: blur(16px);
@@ -179,7 +160,6 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  border: 2px solid #ccc;
   font-feature-settings: "ss01" on,"cv10" on,"calt" off,"liga" off;
 }
 
@@ -355,4 +335,21 @@
   background-color: rgba(17,24,39,.95);
   --tw-border-opacity: 1;
   border-color: rgb(31 41 55/var(--tw-border-opacity));
+}
+
+.input:focus-within {
+  border-color: #9382ff;
+  box-shadow: 0 0 0 2px #030014, 0 0 0 3px #9382ff52;
+}
+
+.input:hover {
+  background: rgba(243,238,255,.06);
+}
+.input {
+  align-items: center;
+  background: rgba(243,238,255,.03);
+  border: 1px solid rgba(243,238,255,.1);
+  border-radius: 8px;
+  display: flex;
+  transition: .15s cubic-bezier(.6,.6,0,1) background-color,.15s cubic-bezier(.6,.6,0,1) border-color,.15s cubic-bezier(.6,.6,0,1) box-shadow;
 }

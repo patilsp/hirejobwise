@@ -84,7 +84,7 @@ const JobForm = ({ type, post, setPost, submitting, handleSubmit }) => {
           />
         </div>
 
-      <div className="flex gap-10">
+      <div className="flex justify-between gap-2">
         <div className="grid gap-2">
           <Label htmlFor="date">Created Date</Label>
           <Input

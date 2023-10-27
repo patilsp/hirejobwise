@@ -46,7 +46,7 @@ export default function Welcome() {
           </motion.div>
         </div>
 
-        <div className="relative flex-col p-4 text-white lg:flex">
+        <div className="relative mt-4 flex-col text-white lg:flex">
           <div className="absolute inset-0 " />
         
             <motion.div
@@ -80,11 +80,11 @@ export default function Welcome() {
                     </div>
                 </div>
                 <div className="text-center">
-                    <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Welcome To <br /> <p className="gradient_blue">Job Portal</p></h1>
-                    <p className="mt-6 text-lg leading-8 text-gray-200">Join the best tech startups in the industry</p>
+                    <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Transforming job <br /> <p className="gradient_blue"> search experience.</p></h1>
+                    <h3 className="mt-6 text-lg leading-8 text-gray-200">Explore an extensive database of jobs from top companies with help of AI </h3>
+                    <p className="mt-6 text-lg leading-8 text-slate-400">Join the best tech startups in the industry</p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
-                    <a href="/sign-in" className="button button-primary">Get started</a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-100">Learn more <span aria-hidden="true">→</span></a>
+                  
                     </div>
                 </div>
                 </div>
@@ -94,7 +94,7 @@ export default function Welcome() {
             </div>
           </div>
 
-          <div className=" item-center flex max-w-full justify-center">
+          {/* <div className=" item-center flex max-w-full justify-center">
             <div className="slider">
               <div className="slide-track">
                 <div className="slide">
@@ -138,7 +138,7 @@ export default function Welcome() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
 
 

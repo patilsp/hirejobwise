@@ -1,9 +1,9 @@
 import { Schema, model, models } from 'mongoose';
 
 const JobSchema = new Schema({
-  userId: {
+  creator: {
+    type: Schema.Types.ObjectId,
     ref: 'User',
-    type: String,
   },
   id: {
     type: String,
@@ -17,7 +17,6 @@ const JobSchema = new Schema({
   description: {
     type: String,
   },
- 
   salary: {
     type: String,
   },
@@ -31,6 +30,9 @@ const JobSchema = new Schema({
   status: {
     type: String,
   },
+  tag: {
+    type: String,
+  }
 });
 
 const Job = models.Job || model('Job', JobSchema);

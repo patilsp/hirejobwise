@@ -9,8 +9,6 @@ import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { Badge } from "@/registry/new-york/ui/badge"
 
-import Lottie from "lottie-react";
-import animationData from "../assets/logo.json";
 
 export function MainNav() {
   const pathname = usePathname()
@@ -18,9 +16,12 @@ export function MainNav() {
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <div style={{ width: '50px', height: '50px' }}>
-          <Lottie animationData={animationData} />
-        </div>
+        <Image 
+          src="/images/logo.png"
+          height="50"
+          width="50"
+          alt="logo"
+         />
       </Link>
       <nav className="nav-link flex items-center space-x-6 text-sm font-medium">
         <Link

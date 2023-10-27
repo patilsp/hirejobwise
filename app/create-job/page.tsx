@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 import JobForm from "@/components/JobForm";
 import { useAuth, useUser } from "@clerk/nextjs"
@@ -27,13 +28,10 @@ import { Textarea } from "@/registry/new-york/ui/textarea"
 
 
 const CreateJob = () => {
-  
+  const { data: session } = useSession();
   const router = useRouter();
-  const { isLoaded, userId, getToken } = useAuth();
-  const { isSignedIn, user } = useUser();
-
   const [submitting, setIsSubmitting] = useState(false);
-  const [post, setPost] = useState({ userId:"", company_name:"", job_title: "", description:"", salary: "", status:"", createddate:"", job_type:"" });
+  const [post, setPost] = useState({ company_name:"", job_title: "", description:"", salary: "", status:"", createddate:"", job_type:"" });
 
   const createJob= async (e) => {
     e.preventDefault();
@@ -43,7 +41,6 @@ const CreateJob = () => {
       const response = await fetch("/api/job/new", {
         method: "POST",
         body: JSON.stringify({
-          userId:userId,
           company_name: post.company_name,
           job_title: post.job_title,
           description: post.description,
@@ -51,6 +48,7 @@ const CreateJob = () => {
           status:post.status,
           createddate: post.createddate,      
           job_type:post.job_type,
+          userId: session?.user.id,
           
         }),
       });
