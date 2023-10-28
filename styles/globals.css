@@ -83,5 +83,75 @@
 }
 
 .blue_gradient{
+  background: linear-gradient(90deg,#4ca5ff,#b573f8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  text-fill-color: transparent !important;
 
+}
+.search_input{
+  @apply inline-flex items-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64;
+}
+
+.sidebar{
+  position: fixed;
+  overflow-y: scroll;
+  height: 700px;
+  width: 300px
+}
+
+
+
+
+
+
+.section {
+  padding: 0.3rem;
+  border: 1px solid rgba(245, 245, 245, 0.075);
+  background: #0e0e0e;
+  border-radius: 10px;
+}
+
+HTML CSSResult Skip Results Iframe
+EDIT ON
+html {
+  --scrollbarBG: #CFD8DC;
+  --thumbBG: #90A4AE;
+}
+body::-webkit-scrollbar {
+  width: 11px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+
+.sidebar {
+  --scrollbarBG: #FFF;
+  --thumbBG: #CCC;
+}
+.sidebar::-webkit-scrollbar {
+  width: 11px;
+}
+.sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+.sidebar::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
 }

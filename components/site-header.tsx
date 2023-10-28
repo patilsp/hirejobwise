@@ -16,11 +16,11 @@ export function SiteHeader() {
   return (
     <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
    
-          <div className="container flex h-14 items-center justify-between gap-1 ">
-            <MainNav />
-            <MobileNav />
+          <div className="flex h-14 w-full items-center justify-between gap-1 px-4 "> 
+            <MobileNav />           
             <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-              <div className="w-full flex-1 sm:flex md:hidden md:w-auto">
+              <MainNav />              
+              <div className="w-full flex-1 sm:flex md:w-auto md:justify-end">
                 <CommandMenu />
               </div>
               <nav className="flex items-center gap-2">

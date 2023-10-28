@@ -23,29 +23,29 @@ import JobFeeds from "@/components/JobFeed"
 export default function MusicPage() {
   return (
     <>   
-      <div className="mt-10 hidden md:block">
+      <div className="md:block">
         {/* <Menu /> */}
-        <div className="">
+        <div className="mt-4">
           <div className="bg-background">
             <div className="grid lg:grid-cols-5">
               <Sidebar playlists={playlists} className="hidden lg:block" />
-              <div className="col-span-3 lg:col-span-4">
-                <div className="h-full px-4 py-6 lg:px-8">
+              <div className="container col-span-3 lg:col-span-4">
+                <div className="h-full px-2">
                   <Tabs defaultValue="music" className="h-full space-y-6">
                     <div className="space-between flex items-center">
                       <TabsList className="gap-2">
                         <TabsTrigger value="music" className="relative px-10">
                           New
                         </TabsTrigger>
-                        <TabsTrigger value="podcasts2" className="px-10">New</TabsTrigger>
+                        <TabsTrigger value="podcasts2" className="px-10">Treading</TabsTrigger>
                         <TabsTrigger value="live" className="px-10">
                           Saved
 
                         </TabsTrigger>
                       </TabsList>
-                      <div className="ml-auto mr-4">
+                      <div className="ml-auto hidden md:block">
                         <Link href="create-job">
-                        <Button>
+                        <Button className="bg-pink-400 text-white hover:bg-pink-700">
                           <PlusCircledIcon className="mr-2 h-4 w-4" />
                            Add New
                         </Button>

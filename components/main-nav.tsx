@@ -23,7 +23,7 @@ export function MainNav() {
           alt="logo"
          />
       </Link>
-      <nav className="nav-link flex items-center space-x-6 text-sm font-medium">
+      <nav className="nav-link flex items-center space-x-6 text-sm font-bold">
         <Link
           href="/"
           className={cn(

@@ -27,9 +27,8 @@ import { Textarea } from "@/registry/new-york/ui/textarea"
 const JobForm = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
     <section className='flex w-full max-w-full flex-col items-center justify-center p-10'>
-      <h1 className='head_text text-center'>
-        <span className='fs-36 gradient_blue'>{type} Job</span>
-      </h1>
+
+      <h1 className='blue_gradient text-center text-4xl font-bold'>{type} Job</h1>
       <p className='desc max-w-md text-center'>
         {type} and share all the details of the job with the world, and let your
         imagination run wild with any AI-powered platform
@@ -40,16 +39,6 @@ const JobForm = ({ type, post, setPost, submitting, handleSubmit }) => {
         className='glassmorphism mt-10 flex w-full max-w-2xl flex-col gap-7 md:w-1/2'
       >
         <div className="grid gap-2">
-          <Label htmlFor="name">Company</Label>
-          <Input
-            value={post.company_name}
-            onChange={(e) => setPost({ ...post, company_name: e.target.value })}
-            placeholder='Enter Company Name'
-            required
-            className='input '
-          />
-        </div>
-        <div className="grid gap-2">
           <Label htmlFor="title">Job Title</Label>
           <Input
             value={post.job_title}
@@ -59,7 +48,27 @@ const JobForm = ({ type, post, setPost, submitting, handleSubmit }) => {
             className='input'
           />
         </div>
-        
+        <div className="grid gap-2">
+          <Label htmlFor="name">Company</Label>
+          <Input
+            value={post.company_name}
+            onChange={(e) => setPost({ ...post, company_name: e.target.value })}
+            placeholder='Enter Company Name'
+            required
+            className='input '
+          />
+        </div>
+     
+        <div className="grid gap-2">
+          <Label htmlFor="title">Job Location</Label>
+          <Input
+            value={post.location}
+            onChange={(e) => setPost({ ...post, location: e.target.value })}
+            placeholder='Enter job location'
+            required
+            className='input'
+          />
+        </div>
 
         <div className="grid gap-2">
           <Label htmlFor="description">job Description</Label>

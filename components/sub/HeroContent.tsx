@@ -27,7 +27,7 @@ const HeroContent = () => {
 
 
     <section
-          className="space-y-2 bg-transparent py-2"
+          className="space-y-2 py-2"
         >
       <div className="relative h-full  flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
 
@@ -40,8 +40,8 @@ const HeroContent = () => {
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[555px]">
             <div className="flex flex-col space-y-2 text-center">
               <div className="text-left">
-                  <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Lets Find Your <br /> <p className="gradient_blue">Dream Job Here</p></h1>
-                  <p className="mt-6 text-lg leading-8 text-slate-200">Join the best tech startups in the industry</p>
+                  <p className="text-left text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">Lets Find Your <br /> Dream Job Here </p>
+                  <p className="mt-6 text-lg leading-8 text-slate-700">Join the best tech startups in the industry</p>
                  
                   <motion.p
                     variants={slideInFromLeft(0.8)}
@@ -51,8 +51,8 @@ const HeroContent = () => {
                     Join the best tech startups in the industry.
                 </motion.p>
                   <div className="items-left justify-left mt-10 flex gap-x-6">
-                  <Link href="/sign-in" className="rounded border bg-white px-4 py-2 font-semibold text-slate-900 shadow hover:bg-slate-900 hover:text-white">Get started</Link>
-                  <a href="#" className="mt-2 text-sm font-semibold leading-6 text-slate-100">Learn more <span aria-hidden="true">→</span></a>
+                  <Link href="/jobs-dashboard" className="rounded border bg-slate-900 px-4 py-2 font-semibold text-white shadow hover:bg-slate-700 hover:text-white">Get started</Link>
+                  <a href="#" className="mt-2 text-sm font-semibold leading-6 text-slate-900">Learn more <span aria-hidden="true">→</span></a>
                   </div>
               </div>
         

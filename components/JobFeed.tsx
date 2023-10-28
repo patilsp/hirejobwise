@@ -6,7 +6,7 @@ import JobCard from "./JobCard";
 
 const JobCardList = ({ data, handleTagClick }) => {
   return (
-    <div className='prompt_layout mt-16'>
+    <div className='job_layout'>
       {data.map((job) => (
         <JobCard
           key={job._id}
@@ -68,11 +68,11 @@ const JobFeed = () => {
   };
 
   return (
-    <section className='feed'>
-      <form className='flex-center relative w-full'>
+    <section className='feed '>
+      <form className='relative top-[-50px] flex w-full justify-end'>
         <input
           type='text'
-          placeholder='Search for a tag or a username'
+          placeholder='Search for a title or a location'
           value={searchText}
           onChange={handleSearchChange}
           required
