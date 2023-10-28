@@ -4,7 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -115,6 +115,8 @@ const JobForm = ({ type, post, setPost, submitting, handleSubmit }) => {
          
         </div>
 
+       
+        </div>
         <div className="grid gap-2">
             <Label htmlFor="status">Status</Label>
             <Select>
@@ -131,8 +133,6 @@ const JobForm = ({ type, post, setPost, submitting, handleSubmit }) => {
               </SelectContent>
             </Select>
           </div>
-        </div>
-      
 
         <div className='mx-3 mb-5 mt-3 flex justify-end gap-4'>
           <Link href='/customers' className='mr-2 mt-2 text-sm text-gray-500'>
@@ -142,7 +142,7 @@ const JobForm = ({ type, post, setPost, submitting, handleSubmit }) => {
           <Button
             type='submit'
             disabled={submitting}
-            className='rounded bg-primary px-5 py-1.5 text-sm text-white'
+            className='text-xs'
           >
             {submitting ? `${type}ing...` : type}
           </Button>

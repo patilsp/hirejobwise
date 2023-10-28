@@ -8,6 +8,8 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import  SessionProvider  from "@/components/Provider"
 import { Toaster } from "react-hot-toast"
+import { TailwindIndicator } from "@/components/tailwind-indicator"
+import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   title: {
@@ -15,6 +17,10 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -30,20 +36,30 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
     <SessionProvider>
-      <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
         
-      <body
-        className={`color: #fff overflow-x-hidden overflow-y-scroll bg-[#030014]`}
-      >
-        
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-                <div className="flex-1 py-10">{children}</div>
-              <SiteFooter />
-            </div>
-           <Toaster />
-        </body>
-      </html>
+        <body
+            className={cn(
+              "min-h-screen bg-background font-sans antialiased",
+              fontSans.variable
+            )}
+          >
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <div className="relative flex min-h-screen flex-col">
+                <SiteHeader />
+                  <div className="my-10 flex-1">{children}</div>
+                <SiteFooter />
+              </div>
+              <Toaster />
+              <TailwindIndicator />
+            </ThemeProvider>
+          </body>
+        </html>
 
       </SessionProvider>
     </>

@@ -42,7 +42,7 @@ const Nav = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 
-                  <DropdownMenuLabel className="font-normal">
+                  <DropdownMenuLabel className="font-bold">
                     <div className="ml-1 flex gap-1 space-y-1 p-1">
                       <Image
                         src={session?.user.image}
