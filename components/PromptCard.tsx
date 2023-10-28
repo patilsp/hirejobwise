@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useSession } from "@clerk/nextjs";
+import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
@@ -84,7 +84,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
               Edit
             </p>
             <p
-              className='font-inter text-sm gradient_blue cursor-pointer'
+              className='font-inter text-sm orange_gradient cursor-pointer'
               onClick={handleDelete}
             >
               Delete

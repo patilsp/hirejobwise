@@ -8,7 +8,7 @@ import { buttonVariants } from "@/registry/new-york/ui/button"
 import { UserAuthForm } from "./components/user-auth-form"
 import { motion } from "framer-motion";
 import Lottie from"lottie-react";
-import animationData from "@/assets/men.json";
+import animationData from "@/assets/logo.json";
 
 export default function Page() {
   return (

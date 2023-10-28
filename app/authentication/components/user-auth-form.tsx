@@ -15,7 +15,7 @@ import { Input } from "@/registry/new-york/ui/input"
 import { Label } from "@/registry/new-york/ui/label"
 
 import Lottie from"lottie-react";
-import animationData from "@/assets/google.json";
+import animationData from "@/assets/logo.json";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 

@@ -40,13 +40,14 @@ export default function MusicPage() {
                         <TabsTrigger value="podcasts2" className="px-10">New</TabsTrigger>
                         <TabsTrigger value="live" className="px-10">
                           Saved
+
                         </TabsTrigger>
                       </TabsList>
                       <div className="ml-auto mr-4">
                         <Link href="create-job">
                         <Button>
                           <PlusCircledIcon className="mr-2 h-4 w-4" />
-                          Add Jobs
+                           Add New
                         </Button>
                         </Link>
                       </div>

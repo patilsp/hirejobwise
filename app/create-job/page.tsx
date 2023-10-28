@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 import JobForm from "@/components/JobForm";
-import { useAuth, useUser } from "@clerk/nextjs"
 import { Button } from "@/registry/new-york/ui/button"
 import {
   Form,

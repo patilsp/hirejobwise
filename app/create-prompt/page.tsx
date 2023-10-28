@@ -4,14 +4,13 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import Form from "@/components/Form";
-import { useAuth, useUser } from "@clerk/nextjs"
+import { useSession } from "next-auth/react";
 
 
 const CreatePrompt = () => {
   
   const router = useRouter();
-  const { isLoaded, userId, getToken } = useAuth();
-  const { isSignedIn, user } = useUser();
+  const { data: session } = useSession();
 
   const [submitting, setIsSubmitting] = useState(false);
   const [post, setPost] = useState({ prompt: "", tag: "" });
