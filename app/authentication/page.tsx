@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <>
       
-      <div className="relative h-full flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0 mb-10">
+      <div className="relative mb-10 h-full flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
         
         <div className="relative flex-col p-4 text-white lg:flex">
           <div className="absolute inset-0 " />
